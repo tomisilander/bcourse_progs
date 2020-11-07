@@ -1,9 +1,9 @@
-THis file is so i=out of date that is almost useless
-Anyway, say scons to compile all
+Say scons to compile all
 
 
 FILE NAMING CONVENTIONS (AT LEAST SOME OF THEM) (extensions):
 
+'''
 txt - data in text format
 ana - result of preliminary data file analysis
 cmd - discretization command file
@@ -21,3 +21,4 @@ clq - cliques
 jtr - join tree
 jtq - quantified join tree i.e join tree + parameters
 
+'''
