@@ -1,0 +1,21 @@
+import glob, os
+
+Import('g_env')
+
+env = g_env.Clone()
+
+env.Append(LIBS=['common', 'Judy', 'm'])
+env.Append(LIBPATH=['common'])
+env.Append(CPPPATH=['common'])
+
+nono = ('nfalearner.c',)
+
+for cfile in glob.glob("*.c"):
+    # env.Program(os.path.split(cfile)[0],[cfile])
+    t = env.Program(cfile)
+    if cfile not in nono:
+        Default(t)
+
+SConscript([
+            'common/SConstruct'
+           ])

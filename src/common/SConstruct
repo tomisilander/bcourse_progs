@@ -1,0 +1,15 @@
+import glob
+
+Import('g_env')
+
+env = g_env.Clone()
+
+nono = ['grades.c','profiles.c']
+libfiles = []
+for cfile in glob.glob("*.c"):
+    if cfile in nono: continue
+    libfiles.append(cfile)
+
+
+#env.SharedLibrary('common', libfiles)
+env.Library('common', libfiles)
