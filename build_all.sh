@@ -1,6 +1,8 @@
 #!/bin/bash
 
-FLAGS='-Wall'
+FLAGS="$@"
+
+cd /root/bcourse_progs
 
 objdir=/root/bcourse_progs/obj_files
 bindir=/root/bcourse_progs/bin_files
