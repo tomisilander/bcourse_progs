@@ -1,22 +1,12 @@
-Say scons to compile all
+This repository contains c-source files for (dockerized) bcourse web service and a 
+Docker container to compile them for it.
 
+To build the docker image, say :
+`docker build -t bc_progs .`
 
-FILE NAMING CONVENTIONS (AT LEAST SOME OF THEM) (extensions):
+And to run run the docker image that compiles the programs, say 
+`docker run --rm  -v $PWD:/root/bcourse_progs bc_progs`
 
-* txt - data in text format
-* ana - result of preliminary data file analysis
-* cmd - discretization command file
-* dat - discretized data
-* idt - discretized data with imputed values for missing values (sometimes dat)
-* vd  - value description of discretized data
-* tht - theta - parameters of bayesian networks
-* ess - equivalent sample size
-* str - structure of bayesian network
-* sst - sufficient statistics
-* dpa - dirichlet parameters
-* mrl - moral graph
-* trg - triangulized graph
-* clq - cliques
-* jtr - join tree
-* jtq - quantified join tree i.e join tree + parameters
-
+After the compilation, there will be a a directory `bin_files` that contains
+the binaries to be copied to bcourse/bin directory before running
+the the [bcourse web_service](https://github.com/tomisilander/bcourse).
